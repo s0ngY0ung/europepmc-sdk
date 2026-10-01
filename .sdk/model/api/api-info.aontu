@@ -1,0 +1,21 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      description: "Community-authored focused subset of the public Europe PMC API, based on https://europepmc.org/RestfulWebService. Not an official specification."
+      servers: [
+        {
+          url: "https://www.ebi.ac.uk/europepmc/webservices/rest"
+        }
+      ]
+      summary: "Community-authored focused subset of the public Europe PMC API, based on https://europepmc.org/RestfulWebService."
+      title: "Europe PMC literature search"
+      version: "1.0.0"
+      website: "https://ebi.ac.uk"
+    }
+  }
+}
+

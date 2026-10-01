@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "search": {
+      "SEARCH00": {
+        "hitCount": 40,
+        "nextCursorMark": "s29",
+        "resultList": {},
+        "version": "s2b",
+        "id": "SEARCH00"
+      },
+      "SEARCH01": {
+        "hitCount": 80,
+        "nextCursorMark": "s51",
+        "resultList": {},
+        "version": "s53",
+        "id": "SEARCH01"
+      },
+      "SEARCH02": {
+        "hitCount": 120,
+        "nextCursorMark": "s79",
+        "resultList": {},
+        "version": "s7b",
+        "id": "SEARCH02"
+      }
+    }
+  },
+  "new": {
+    "search": {
+      "search_ref01": {
+        "hitCount": 160,
+        "nextCursorMark": "sa1",
+        "resultList": {},
+        "version": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /search": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+main: kit: {
+  repo: {host: 'github.com', path: 's0ngY0ung/europepmc-sdk'}
+  author: {name: 'Song Yang', url: 'https://github.com/s0ngY0ung'}
+  target: ts: publish: registry: package: '@s0ngY0ung/europepmc-sdk'
+}

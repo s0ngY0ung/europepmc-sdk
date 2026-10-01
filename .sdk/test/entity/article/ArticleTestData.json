@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "article": {
+      "ARTICLE00": {
+        "hitCount": 40,
+        "id": "ARTICLE00",
+        "result": {},
+        "version": "s2b",
+        "source": "SOURCE01"
+      },
+      "ARTICLE01": {
+        "hitCount": 80,
+        "id": "ARTICLE01",
+        "result": {},
+        "version": "s53",
+        "source": "SOURCE01"
+      },
+      "ARTICLE02": {
+        "hitCount": 120,
+        "id": "ARTICLE02",
+        "result": {},
+        "version": "s7b",
+        "source": "SOURCE01"
+      }
+    }
+  },
+  "new": {
+    "article": {
+      "article_ref01": {
+        "hitCount": 160,
+        "result": {},
+        "version": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /article/{source}/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

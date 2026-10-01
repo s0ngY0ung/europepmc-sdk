@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: Europe PMC literature search
+  version: 1.0.0
+  description: Community-authored focused subset of the public Europe PMC API, based on https://europepmc.org/RestfulWebService. Not an official specification.
+servers:
+  - url: https://www.ebi.ac.uk/europepmc/webservices/rest
+paths:
+  /search:
+    get:
+      operationId: searchPublications
+      tags: [Search]
+      parameters:
+        - name: query
+          in: query
+          required: true
+          schema: {type: string}
+        - name: format
+          in: query
+          schema: {type: string, default: json, enum: [json]}
+        - name: pageSize
+          in: query
+          schema: {type: integer, minimum: 1, maximum: 1000, default: 10}
+        - name: cursorMark
+          in: query
+          schema: {type: string, default: '*'}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/SearchResponse'}
+  /article/{source}/{id}:
+    get:
+      operationId: getArticle
+      tags: [Article]
+      parameters:
+        - name: source
+          in: path
+          required: true
+          schema: {type: string}
+        - name: id
+          in: path
+          required: true
+          schema: {type: string}
+        - name: format
+          in: query
+          schema: {type: string, default: json, enum: [json]}
+      responses:
+        '200':
+          description: Article metadata
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/ArticleResponse'}
+components:
+  schemas:
+    Publication:
+      type: object
+      properties:
+        id: {type: string}
+        source: {type: string}
+        title: {type: string}
+        authorString: {type: string}
+        pubYear: {type: string}
+        doi: {type: string}
+    SearchResponse:
+      type: object
+      properties:
+        version: {type: string}
+        hitCount: {type: integer}
+        nextCursorMark: {type: string}
+        resultList:
+          type: object
+          properties:
+            result:
+              type: array
+              items: {$ref: '#/components/schemas/Publication'}
+
+    ArticleResponse:
+      type: object
+      properties:
+        version: {type: string}
+        hitCount: {type: integer}
+        result: {$ref: '#/components/schemas/Publication'}

@@ -1,0 +1,33 @@
+# BasicArticleFlow
+
+main: kit: flow: BasicArticleFlow:
+{
+  entity: "article",
+  kind: "basic",
+  name: "BasicArticleFlow",
+  step: [
+    {
+      i: {
+        ref: "article_ref01",
+        srcdatavar: "article_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "article01",
+        source: "source01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-article_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicArticleFlow"
+}
